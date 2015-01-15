@@ -60,4 +60,5 @@ describe(CD) do
       expect(CD.find(test_cd.id())).to(eq(test_cd))
     end
   end
+
 end

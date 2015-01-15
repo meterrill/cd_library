@@ -3,7 +3,6 @@ class CD
 
   attr_reader(:cd_name, :cd_artist)
 
-
   define_method(:initialize) do |attributes|
     @cd_name = attributes.fetch(:cd_name)
     @cd_artist = attributes.fetch(:cd_artist)
@@ -26,10 +25,10 @@ class CD
     @@cds = []
   end
 
-  define_singleton_method(:find) do |id|
+  define_singleton_method(:find) do |identification|
     found_cd = nil
     @@cds.each() do |cd|
-      if cd.id().eql?(id)
+      if cd.id().eql?(identification.to_i())
         found_cd = cd
       end
     end

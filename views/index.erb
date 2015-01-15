@@ -1,0 +1,17 @@
+<h1>CD</h1>
+
+<h3>Add a cd here:</h3>
+
+<form action="/cd_library" method="post">
+ <label for="cd_name">CD Name:</label>
+ <input id="cd_name" name="cd_name" type="text">
+ <label for="cd_artist">CD Artist:</label>
+ <input id="cd_artist" name="cd_artist" type="text">
+ <button type="submit">Add CD</button>
+</form>
+
+<ul>
+  <% @cds.each() do |cd| %>
+  <li><a href="/cd_library/<%= cd.id() %>"><%= cd.cd_name() %> - <%= cd.cd_artist() %></a></li>
+  <% end %>
+</ul>
