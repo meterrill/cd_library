@@ -34,4 +34,12 @@ class CD
     end
     found_cd
   end
+
+  define_singleton_method(:search) do |search_cd|
+    if @@cds.include?(search_cd)
+      search_cd
+    else
+      "That cd is not in your library."
+    end
+  end
 end

@@ -61,4 +61,13 @@ describe(CD) do
     end
   end
 
+  describe(".search") do
+    it("searches for a cd by it's id number and returns the cd name and artist") do
+      test_cd = CD.new({:cd_name => "Lady in Satin", :cd_artist => "Billy Holiday"})
+      test_cd.save()
+      test_cd2 = CD.new({:cd_name => "Brothers", :cd_artist => "The Black Keys"})
+      test_cd2.save()
+      expect(CD.search(test_cd)).to(eq(test_cd))
+    end
+  end
 end
